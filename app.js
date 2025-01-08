@@ -21,12 +21,13 @@ app.use(express.urlencoded({ extended: true }));
 // );
 app.use(
   cors({
-    origin: '*', // Allow all origins
+    origin: ['https://pd-lms.netlify.app'], // Specify exact origin
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
   })
 );
+
 
 
 app.use(morgan('dev'));
