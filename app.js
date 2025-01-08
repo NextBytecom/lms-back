@@ -19,7 +19,16 @@ app.use(express.urlencoded({ extended: true }));
 //     credentials: true,
 //   })
 // );
-app.use(cors());
+// app.use(cors());
+app.use(
+  cors({
+    origin: '*', // Allow all origins
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+  })
+);
+
 app.use(morgan('dev'));
 app.use(cookieParser());
 
