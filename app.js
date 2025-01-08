@@ -13,21 +13,23 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 // Third-Party
-// app.use(
-//   cors({
-//     origin: [process.env.FRONTEND_URL],
-//     credentials: true,
-//   })
-// );
 app.use(
   cors({
-    origin: ['https://pd-lms.netlify.app'], // Specify exact origin
+    // origin: [process.env.FRONTEND_URL],
+    origin: ['https://pd-lms.netlify.app],
+    credentials: true,
+  })
+);
+
+
+app.use(
+  cors({
+    origin: ['https://pd-lms.netlify.app'], // Specify your frontend URL
     credentials: true,
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     allowedHeaders: ['Content-Type', 'Authorization']
   })
 );
-
 
 
 app.use(morgan('dev'));
