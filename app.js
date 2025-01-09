@@ -16,7 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
     // origin: [process.env.FRONTEND_URL],
-    origin: ['https://pd-lms.netlify.app],
+    origin: '*,
     credentials: true,
   })
 );
